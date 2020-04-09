@@ -5,11 +5,12 @@ for (var i = 0; i < numberofbuttons; i++) {
         animation(key);
         sound(key);
     });
-    document.addEventListener('keypress', function(event) {
-        animation(event.key);
-        sound(event.key);
-    });
 }
+document.addEventListener('keydown', function(event) {
+    animation(event.key);
+    sound(event.key);
+    console.log(event.key)
+});
 
 function animation(currentkey) {
     var activebutton = document.querySelector('.' + currentkey);
